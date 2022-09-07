@@ -19,4 +19,9 @@ jobs:
         with:
           format: pdf
           filename: 1.tex
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with: 
+          name: assets-for-download
+          path: 1.pdf
 
