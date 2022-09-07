@@ -1,0 +1,126 @@
+\documentclass{article}
+
+\usepackage{amsfonts} 
+\usepackage{amsmath}
+
+\usepackage[utf8]{inputenc}
+
+\title{analyse 1}
+\author{abderahmane bouziane}
+\date{2022}
+
+\begin{document}
+
+\maketitle
+
+6 septembre 2022
+
+\section{Chapitre 1: Nombre réels $\mathbb{R}$}
+
+\subsection{Addition, multiplication et ordre}
+on définit l'ensemble des nbrs reels noté $\mathbb{R}$ de façon axiomatique.
+On commence par qlqs axiomes auxquelles on en ajoute d’autres
+L'ensemble R est muni de 2 operations
+
+\begin{itemize}
+    \item l'addition $(x, y) \rightarrow x + y$
+    \item la multiplication $(x, y) \rightarrow x \cdot y$
+\end{itemize}
+
+Ces 2 operations vérifient les axiomes suivants
+
+Addition
+\begin{itemize}
+    \item A0) Fermeture: $\forall x, y \in \mathbb{R}, x + y \in \mathbb{R}$
+    \item A1) Commutativité: $\forall x, y \in \mathbb{R}, x + y = y + x$
+    \item A2) Associativité: $\forall x, y, z \in \mathbb{R}, x + (y + z) = (y + x) + Z$
+    \item A3) Element neutre: $\forall x \in \mathbb{R}, \exists! 0. x + 0 = x$
+    \item A4) Inverse additif : $\forall \in \mathbb{R} \exists -x, x + (-x) = 0$
+\end{itemize}
+
+Multiplication
+\begin{itemize}
+    \item M0) Fermeture: $\forall x, y \in \mathbb{R}, x \cdot y \in \mathbb{R}$
+    \item M1) Commutativité: $\forall x, y \in \mathbb{R}, x \cdot y = y \cdot x$
+    \item M2) Associativité: $\forall x, y, z \in \mathbb{R}, x \cdot (y \cdot z) = (y \cdot x) \cdot z$
+    \item M3) Element neutre: $\forall x \in \mathbb{R}, \exists! 1. x + 1 = x$
+    \item M4) Inverse multiplicatif : $\forall \in \mathbb{R} \exists x^{-1}, x \cdot x^{-1} = 1$
+\end{itemize}
+
+Commun
+\begin{itemize}
+    \item D) Distributivité: $\forall x, y, z \in \mathbb{R}, x \cdot (y + z) = x \cdot y + x \cdot z$
+\end{itemize}
+
+Remarques
+\begin{itemize}
+    \item L’élément neutre est unique
+    \item L'inverse n'est pas spécifie unique, mais c'est deductible
+    \item de $A0, A2, A3$ on peut montrer que l'inverse additif est unique
+    \item de $M0, M2, M3$ on peut montrer que l'inverse multiplicatif est unique
+
+\end{itemize}
+
+Ex: MQ (montrez que) l'inv. add.  est unique.\\
+on suppose que c'est faux\\
+ie $\exists x \in \mathbb{R} \; \textrm{pour lequel} \exists (-x) et (-\hat{x}) \in \mathbb{R}$ \\
+$x + (-x) = 0,  x + (-\hat{x} = 0)$ \\
+but: prouver que $-x$ et $-\hat{x}$ sont égaux \\
+
+\begin{equation}
+\begin{aligned}
+    -x &= (-x + 0) \; \textrm{par A3} \\
+       &= (-x + (x + - \hat{x})) \; \textrm{par H (hypothèse)} \\
+       &= ((-x + x) + - \hat{x}) \; \textrm{par A2} \\
+       &= (0 + - \hat{x}) \; \textrm{par H} \\
+    -x &= - \hat{x} \; \textrm{par A3} \\
+\end{aligned}
+\end{equation}
+
+Ex: MQ $x \cdot 0  = 0 \; \forall x \in \mathbb{R}$ \\
+
+\begin{equation}
+\begin{aligned}
+    0 &=  (x \cdot 0) + (- (x \cdot 0)) \; \textrm{par A4} \\
+      &=  (x \cdot (0 + 0)) + (- (x \cdot 0)) \; \textrm{par A3} \\
+      &=  (x \cdot 0 + x \cdot 0) + (- (x \cdot 0)) \; \textrm{par D} \\
+      &=  (x \cdot 0) + (x \cdot 0 + - (x \cdot 0)) \; \textrm{par A2} \\
+      &=  (x \cdot 0) + 0 \; \textrm{par A4} \\
+    0 &=  (x \cdot 0) \; \textrm{par A3} \\
+\end{aligned}
+\end{equation}
+
+Exercice: MQ $-1 \cdot x = -x$ \\
+
+\begin{equation}
+\begin{aligned}
+    x \cdot 0 &= 0 \; \textrm{par Ex précédant} \\
+    x \cdot (1 + -1) &= 0 \; \textrm{par A4} \\
+    x \cdot 1 + x \cdot -1 &= 0 \; \textrm{par D} \\
+    x + x \cdot -1 &= 0 \; \textrm{par M4} \\
+    x + -x + x \cdot -1 &= 0 + -x \; \textrm{par ?} \\
+    (x + -x) + x \cdot -1 &= -x \; \textrm{par A2 et A3} \\
+    x \cdot -1 &= -x \; \textrm{par A4} \\
+\end{aligned}
+\end{equation}
+
+notation: $x - y = x + (-y)$\\
+Question: A0 - A4, M0 M4, D sont=ils suffisants pour définir les nombre reels?\\
+De A3 et M3 on déduit que $\{0, 1\} \in \mathbb{R}$\\
+De A0 $\{0, 1, 1 + 1, 1 + 1 + 1 \ldots\} = \{0, 1, 2, 3 \ldots\} = \{0\} \cap \mathbb{N} \subset \mathbb{R}$ \\
+De A4 $\{\ldots, -3, -2, -1, 0, 1, 2, 3 \ldots\} = \mathbb{Z} \subset \mathbb{R}$ \\ 
+De M4 $\{\ldots, \frac{-3}{2}, \ldots\} = \{ \frac{m}{n} | m \in \mathbb{Z} , n \in \mathbb{N} \} = \mathbb{Q} \subset \mathbb{R}$ \\ 
+
+Donc $\mathbb{Q}$  et $]mathbb{R}$ vérifient tous les deux A0 - A4, M0 M4, D \\
+$\mathbb{Q} \subset \mathbb{R}$\\
+$\mathbb{Q} \ne \mathbb{R}$ ?\\
+
+NB: les complexes complexes aussi les axiomes \\
+
+Pour les distinguer il faut des axiomes supplémentaires \\
+
+Remarque  $\{ \frac{m}{n} | m \in \mathbb{Z} , n \in \mathbb{N} \}$ \\
+le signe  est au numérateur\\
+on ne divise jamais par 0\\
+
+\end{document}
