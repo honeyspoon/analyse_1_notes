@@ -2,8 +2,16 @@
 
 \usepackage{amsfonts} 
 \usepackage{amsmath}
+\usepackage{amssymb}
 
 \usepackage[utf8]{inputenc}
+
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+\newcommand{\notle}{\;\not\!\le}
+
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\rationals}{\mathbb{Q}}
 
 \title{analyse 1}
 \author{abderahmane bouziane}
@@ -15,10 +23,10 @@
 
 6 septembre 2022
 
-\section{Chapitre 1: Nombre réels $\mathbb{R}$}
+\section{Chapitre 1: Nombre réels $\reals$}
 
 \subsection{Addition, multiplication et ordre}
-on définit l'ensemble des nbrs reels noté $\mathbb{R}$ de façon axiomatique.
+on définit l'ensemble des nbrs reels noté $\reals$ de façon axiomatique.
 On commence par qlqs axiomes auxquelles on en ajoute d’autres
 L'ensemble R est muni de 2 operations
 
@@ -27,29 +35,27 @@ L'ensemble R est muni de 2 operations
     \item la multiplication $(x, y) \rightarrow x \cdot y$
 \end{itemize}
 
-Ces 2 operations vérifient les axiomes suivants
-
 Addition
 \begin{itemize}
-    \item A0) Fermeture: $\forall x, y \in \mathbb{R}, x + y \in \mathbb{R}$
-    \item A1) Commutativité: $\forall x, y \in \mathbb{R}, x + y = y + x$
-    \item A2) Associativité: $\forall x, y, z \in \mathbb{R}, x + (y + z) = (y + x) + Z$
-    \item A3) Element neutre: $\forall x \in \mathbb{R}, \exists! 0. x + 0 = x$
-    \item A4) Inverse additif : $\forall \in \mathbb{R} \exists -x, x + (-x) = 0$
+    \item A0) Fermeture: $\forall x, y \in \reals, x + y \in \reals$
+    \item A1) Commutativité: $\forall x, y \in \reals, x + y = y + x$
+    \item A2) Associativité: $\forall x, y, z \in \reals, x + (y + z) = (y + x) + Z$
+    \item A3) Element neutre: $\forall x \in \reals, \exists! 0. x + 0 = x$
+    \item A4) Inverse additif : $\forall \in \reals \exists -x, x + (-x) = 0$
 \end{itemize}
 
 Multiplication
 \begin{itemize}
-    \item M0) Fermeture: $\forall x, y \in \mathbb{R}, x \cdot y \in \mathbb{R}$
-    \item M1) Commutativité: $\forall x, y \in \mathbb{R}, x \cdot y = y \cdot x$
-    \item M2) Associativité: $\forall x, y, z \in \mathbb{R}, x \cdot (y \cdot z) = (y \cdot x) \cdot z$
-    \item M3) Element neutre: $\forall x \in \mathbb{R}, \exists! 1. x + 1 = x$
-    \item M4) Inverse multiplicatif : $\forall \in \mathbb{R} \exists x^{-1}, x \cdot x^{-1} = 1$
+    \item M0) Fermeture: $\forall x, y \in \reals, x \cdot y \in \reals$
+    \item M1) Commutativité: $\forall x, y \in \reals, x \cdot y = y \cdot x$
+    \item M2) Associativité: $\forall x, y, z \in \reals, x \cdot (y \cdot z) = (y \cdot x) \cdot z$
+    \item M3) Element neutre: $\forall x \in \reals, \exists! 1. x + 1 = x$
+    \item M4) Inverse multiplicatif : $\forall \in \reals \exists x^{-1}, x \cdot x^{-1} = 1$
 \end{itemize}
 
 Commun
 \begin{itemize}
-    \item D) Distributivité: $\forall x, y, z \in \mathbb{R}, x \cdot (y + z) = x \cdot y + x \cdot z$
+    \item D) Distributivité: $\forall x, y, z \in \reals, x \cdot (y + z) = x \cdot y + x \cdot z$
 \end{itemize}
 
 Remarques
@@ -63,30 +69,30 @@ Remarques
 
 Ex: MQ (montrez que) l'inv. add.  est unique.\\
 on suppose que c'est faux\\
-ie $\exists x \in \mathbb{R} \; \textrm{pour lequel} \exists (-x) et (-\hat{x}) \in \mathbb{R}$ \\
+ie $\exists x \in \reals \; \text{pour lequel} \exists (-x) et (-\hat{x}) \in \reals$ \\
 $x + (-x) = 0,  x + (-\hat{x} = 0)$ \\
 but: prouver que $-x$ et $-\hat{x}$ sont égaux \\
 
 \begin{equation}
 \begin{aligned}
-    -x &= (-x + 0) \; \textrm{par A3} \\
-       &= (-x + (x + - \hat{x})) \; \textrm{par H (hypothèse)} \\
-       &= ((-x + x) + - \hat{x}) \; \textrm{par A2} \\
-       &= (0 + - \hat{x}) \; \textrm{par H} \\
-    -x &= - \hat{x} \; \textrm{par A3} \\
+    -x &= (-x + 0) \; \text{par A3} \\
+       &= (-x + (x + - \hat{x})) \; \text{par H (hypothèse)} \\
+       &= ((-x + x) + - \hat{x}) \; \text{par A2} \\
+       &= (0 + - \hat{x}) \; \text{par H} \\
+    -x &= - \hat{x} \; \text{par A3} \\
 \end{aligned}
 \end{equation}
 
-Ex: MQ $x \cdot 0  = 0 \; \forall x \in \mathbb{R}$ \\
+Ex: MQ $x \cdot 0  = 0 \; \forall x \in \reals$ \\
 
 \begin{equation}
 \begin{aligned}
-    0 &=  (x \cdot 0) + (- (x \cdot 0)) \; \textrm{par A4} \\
-      &=  (x \cdot (0 + 0)) + (- (x \cdot 0)) \; \textrm{par A3} \\
-      &=  (x \cdot 0 + x \cdot 0) + (- (x \cdot 0)) \; \textrm{par D} \\
-      &=  (x \cdot 0) + (x \cdot 0 + - (x \cdot 0)) \; \textrm{par A2} \\
-      &=  (x \cdot 0) + 0 \; \textrm{par A4} \\
-    0 &=  (x \cdot 0) \; \textrm{par A3} \\
+    0 &=  (x \cdot 0) + (- (x \cdot 0)) \; \text{par A4} \\
+      &=  (x \cdot (0 + 0)) + (- (x \cdot 0)) \; \text{par A3} \\
+      &=  (x \cdot 0 + x \cdot 0) + (- (x \cdot 0)) \; \text{par D} \\
+      &=  (x \cdot 0) + (x \cdot 0 + - (x \cdot 0)) \; \text{par A2} \\
+      &=  (x \cdot 0) + 0 \; \text{par A4} \\
+    0 &=  (x \cdot 0) \; \text{par A3} \\
 \end{aligned}
 \end{equation}
 
@@ -94,33 +100,275 @@ Exercice: MQ $-1 \cdot x = -x$ \\
 
 \begin{equation}
 \begin{aligned}
-    x \cdot 0 &= 0 \; \textrm{par Ex précédant} \\
-    x \cdot (1 + -1) &= 0 \; \textrm{par A4} \\
-    x \cdot 1 + x \cdot -1 &= 0 \; \textrm{par D} \\
-    x + x \cdot -1 &= 0 \; \textrm{par M4} \\
-    x + -x + x \cdot -1 &= 0 + -x \; \textrm{par ?} \\
-    (x + -x) + x \cdot -1 &= -x \; \textrm{par A2 et A3} \\
-    x \cdot -1 &= -x \; \textrm{par A4} \\
+    x \cdot 0 &= 0 \; \text{par Ex précédant} \\
+    x \cdot (1 + -1) &= 0 \; \text{par A4} \\
+    x \cdot 1 + x \cdot -1 &= 0 \; \text{par D} \\
+    x + x \cdot -1 &= 0 \; \text{par M4} \\
+    x + -x + x \cdot -1 &= 0 + -x \; \text{par ?} \\
+    (x + -x) + x \cdot -1 &= -x \; \text{par A2 et A3} \\
+    x \cdot -1 &= -x \; \text{par A4} \\
 \end{aligned}
 \end{equation}
 
 notation: $x - y = x + (-y)$\\
 Question: A0 - A4, M0 M4, D sont=ils suffisants pour définir les nombre reels?\\
-De A3 et M3 on déduit que $\{0, 1\} \in \mathbb{R}$\\
-De A0 $\{0, 1, 1 + 1, 1 + 1 + 1 \ldots\} = \{0, 1, 2, 3 \ldots\} = \{0\} \cap \mathbb{N} \subset \mathbb{R}$ \\
-De A4 $\{\ldots, -3, -2, -1, 0, 1, 2, 3 \ldots\} = \mathbb{Z} \subset \mathbb{R}$ \\ 
-De M4 $\{\ldots, \frac{-3}{2}, \ldots\} = \{ \frac{m}{n} | m \in \mathbb{Z} , n \in \mathbb{N} \} = \mathbb{Q} \subset \mathbb{R}$ \\ 
+De A3 et M3 on déduit que $\{0, 1\} \in \reals$\\
+De A0 $\{0, 1, 1 + 1, 1 + 1 + 1 \ldots\} = \{0, 1, 2, 3 \ldots\} = \{0\} \cap \naturals \subset \reals$ \\
+De A4 $\{\ldots, -3, -2, -1, 0, 1, 2, 3 \ldots\} = \mathbb{Z} \subset \reals$ \\ 
+De M4 $\{\ldots, \frac{-3}{2}, \ldots\} = \{ \frac{m}{n} | m \in \mathbb{Z} , n \in \naturals \} = \rationals \subset \reals$ \\ 
 
-Donc $\mathbb{Q}$  et $]mathbb{R}$ vérifient tous les deux A0 - A4, M0 M4, D \\
-$\mathbb{Q} \subset \mathbb{R}$\\
-$\mathbb{Q} \ne \mathbb{R}$ ?\\
+Donc $\rationals$  et $\reals$ vérifient tous les deux A0 - A4, M0 M4, D \\
+$\rationals \subset \reals$\\
+$\rationals \ne \reals$ ?\\
 
 NB: les complexes complexes aussi les axiomes \\
 
 Pour les distinguer il faut des axiomes supplémentaires \\
 
-Remarque  $\{ \frac{m}{n} | m \in \mathbb{Z} , n \in \mathbb{N} \}$ \\
+Remarque  $\{ \frac{m}{n} \;|\; m \in \mathbb{Z} , n \in \naturals \}$ \\
 le signe  est au numérateur\\
 on ne divise jamais par 0\\
+
+8 septembre\\
+cours 2\\
+
+def: Une relation d'ordre sur un ensemble $E$ est une relation q'on note ici $\le$ vérifient les propriétés suivantes\\
+i) réflexivité\\
+$$ x \le x \; \forall x \in E$$ \\
+ii) antisymétrique \\
+$$ x \le y \; \text{et} \; y \le x \; \text{alors} \; x = y$$ \\
+iii) transitivité\\
+$$ x \le y \; \text{et} \; y \le z \; \text{alors} \; x \le z$$ \\
+
+Axiomes d'ordre sur $\reals$ \\
+
+O) Ordre: $\reals$ est muni d'une relation d'ordre note $\le$, vérifiant les propriétés suivantes \\
+O1) $0 \le 1$ et $0 \ne 1$\\
+O2) $\forall x \in \reals$ (au mois) une des affirmations suivantes est vraie\\
+$0 \le x$ ou $x \le 0$ \\
+O3) $x \le y, x + z \le y + z \forall x,y,z \in \reals$ \\
+O4) $0 \le x, 0 \le y, 0 \le x \cdot y$ \\
+
+Remarque:\\
+$\mathbb{C}$ ne vérifie pas (O), Donc, $\reals \ne \mathbb{C}$ \\
+$\rationals$ vérifie (O), car $\rationals \subset \reals$\\
+On ne sait toujours pas si $\rationals \ne \reals$\\
+
+Notation:\\
+on écrit $x < y \rightarrow x \le y, \; x \ne y$\\
+on écrit $x \ge y \rightarrow y \le x$\\
+on écrit $x > y \rightarrow y < x$\\
+
+MQ: $0 < x \Longleftrightarrow - x < 0$ \\
+split en 2 \\
+$0 < x \Longrightarrow - x < 0$ et $-x < 0 \Longrightarrow 0 < x$ \\
+
+1) $0 < x \Longrightarrow - x < 0$ \\
+Hypothèse (H1): $0 < x$
+
+\begin{equation}
+\begin{aligned}
+    -x &=  -x\\
+    -x &=  0 + -x &\;         & \text{par A3} \\
+    -x &=  0 + -x &\le \; 0 + -x + x\; &\text{par O3} \\
+    -x &=  0 + -x \le \; 0 \;  &     & \text{par H1} \\
+    -x &\le \; 0 \;  &     & \text{} \\
+\end{aligned}
+\end{equation}
+
+par contradiction \\
+Hypothèse (H2): $ -x = 0 $ \\
+\begin{equation}
+\begin{aligned}
+    x &= \; x + 0 \; & \text{par A3} \\
+    &= x + -x \; &\text{par H2} \\
+    &= 0 \; &\text{par A4} \\
+    \text{contradiction avec } H1
+\end{aligned}
+\end{equation}\\
+
+donc Hypothèse (H2) est fausse, $-x \ne 0$ \\
+donc $-x < 0$ \\
+
+% TODO:
+Exercice: \\
+2) $-x < 0 \Longrightarrow 0 < x$ \\
+Hypothèse: $-x < 0$ \\
+
+\begin{equation}
+\begin{aligned}
+    ...\\\
+    x &\ge 0 \\
+\end{aligned}
+\end{equation}\\
+Ex: MQ $0 < x \implies 0 < x^{-1}$\\
+par contradiction\\
+Hypothèse H3:\\
+$\exists x \in \reals, x < 0, \; x^{-1} = 0 $\\
+\begin{equation}
+\begin{aligned}
+    1 &= x \cdot x^{-1} \\
+    1 &= x \cdot 0 \text{ par M3} \\
+    1 &= 0 \text{ par exemple précédant} \\
+    &\text{contradiction} \\
+    &\text{donc H3 est faux}, \\
+    &x^{-1} = 0 \\
+\end{aligned}
+\end{equation}\\
+
+deuxième partie:\\
+par contradiction\\
+Hypothèse H4: $x^{-1} > 0$
+\begin{equation}
+\begin{aligned}
+    x^{-1} &< 0\\
+    0 &< - x^{-1} \text{ par exemple précédant} \\
+    0 &< - x^{-1} \cdot x \text{ par O4} \\
+    0 &< - 1 \text{ par exemple précédant et M4} \\
+    &\text{contradiction} \\
+    &\text{donc H4 est faux}, \\
+    &0 \le x^{1}\\
+    &0 < x^{-1} \text{ en combinant résultat précédant}\\
+\end{aligned}
+\end{equation}\\
+
+% TODO:
+Exercice: MQ \\
+$$y^{-1} < x^{-1} \implies 0 < x < y$$
+
+Definition:\\
+soit $x \in \reals$, la valeur absolue de x est noté $|x|$\\
+
+$$
+|x| = 
+\begin{cases}
+    x ,& x > 0 \\
+    -x ,& x < 0
+\end{cases}
+$$
+proposition\\
+$\forall x \in \reals, |x| \ge 0$ \\
+$ |x| = 0 \Longleftrightarrow x = 0$
+demonstration triviale
+% TODO:
+
+proposition\\
+$\forall x \in \reals, -|x| \le x \le |x|$ \\
+\begin{equation}
+\begin{aligned}
+    \text{si } x = 0\\
+    - |0| = 0 = |0| \\
+    \\
+    \text{si } x > 0\\
+    |x| = x > 0 \\
+    |x| = x > 0 > -x \text{ par exemple}\\
+    - |x| = x < |x| \text{ par exemple}\\
+    \\
+    \text{si } x < 0\\
+    -x > 0 > x \text{ par exemple}\\
+    % TODO:
+    ????\\\
+\end{aligned}
+\end{equation}\\
+
+Thm inégalité du triangle \\
+$$|x + y| \le |x| +|y| \; \forall x, y \in \reals$$
+donc par la proposition précédant \\
+$-|x| \le x \le |x|$\\
+$-|y| \le y \le |y|$\\
+en additionnant les 2 on obtiens: \\
+$-(|x| + |y|) \le x + y \le |x| + |y|$ \\
+
+si $x + y > 0$ \\
+$x + y = |x+y| \le |x| + |y|$\\
+$|x + y| \le |x| + |y|$ \\
+
+si $x + y < 0,$\\
+??? \\\
+
+Attention\\
+si $x \le y \notimplies |x + z| \le |y + z| $ \\
+contre-exemple \\
+$ x = -2, y = 1 z = -1 $ \\
+$ x < y $ \\
+$ | - 2 - 1 | = 3  \notle | 1 - 1 | = 0$ 
+
+\subsection{Induction mathématique}
+
+principe du bon ordre\\
+tout ensemble non vide $ E \subset \naturals$ possède un plus petit element\\
+
+proposition: soit $E \subset \naturals$ tel que \\
+i) $1 \in E$\\
+ii) $n \in E \implies n+1 \in E$\\
+
+alors $E  = \naturals$
+
+par contradiction\\
+Hypothèse H5\\
+$\naturals \setminus E \ne \emptyset$\\
+cet ensemble possède eun plus petit element, par le principe du bon ordre\\
+$\exists n_0 \in \naturals \setminus E, n_0 \text{ est le plus petit element}$ \\
+
+Puisque $1 \in E$\\
+$n_0 \ne 1, n_0 > 1$\\
+$n_0 - 1 \in \naturals, n_0 - 1 \in E$ \\
+par ii) $n_0 -1 + 1 \in E$\\
+
+contradiction car $n_0 \in \naturals \setminus E$
+H5 est faux\\
+$\naturals \setminus E = \emptyset$
+
+Thm: principe d'induction\\
+$$\forall n \in \naturals, (P(n))$$\\
+i) $(P(1))$ est vraie\\
+ii) $(P(n)) \implies P(n + 1), \forall n \in \naturals$ \\
+alors $(P(n)) \text{ est vraie } \forall n \in \naturals$
+
+demonstration découle directement de la proposition précédente en considerant
+$$E = \{n \in \naturals \; | \; (P(n)) \text{ est vraie}\}$$\\
+
+Ex: Inégalité de Bernoulli \\
+\begin{equation}
+\begin{aligned}
+(1 + x)^n \le 1 + nx \; \forall n \in \naturals\\
+1) (P(1)): (1 + x)^1 \ge 1 + x \text{ vraie} \\
+2) \text{en assumant vraie } (P(n)) \\
+\end{aligned}
+\end{equation}\\
+
+\begin{equation}
+\begin{aligned}
+(1 + x)^{n + 1} &= (1 + x)^n (1 + x) \\
+&\ge (1 + nx)(1 + x)\\
+&\ge 1 + (n + 1)x + n x ^2 \text{ car } nx ^2 \ge 0\\
+\end{aligned}
+\end{equation}\\
+3) par le principe de l'induction l’inégalité de Bernoulli est vraie\\
+ 
+Remarque: \\
+on utilise $x \le -1$, pour preserver le sens de l’inégalité.\\
+
+Ex: MQ: $2^3 + 4^3 + 6^3 + ... + (2n)^3 = 2n^2(n+1)^2 \; \forall n \in \naturals$\\
+3) par le principe d'induction l'egalite est vrai $\forall n \in \naturals$\\
+\begin{equation}
+\begin{aligned}
+1) (P(1)):  2^3 = 2(2)^2\text{ vraie} \\
+2) \text{en assumant vraie } (P(n)) \\
+\end{aligned}
+\end{equation}\\
+
+\begin{equation}
+    \begin{aligned}
+        ... + (2(n + 1))^3 &= 2n^2(n+1)^2 + (2(n + 1))^2 \cdot (2n+ 1) \\
+        &= 2(n + 1)^2(n^2 + 4(n+ 4))\\
+        &= 2(n + 1)^2(n + 2)^2\\
+        &= 2(n + 1)^2(n + 1 + 1)^2\\
+    \end{aligned}
+\end{equation}
+
+Exercice: pour $x \in ]-1, 1[$ MQ $\Sigma_{k=0}^n x^k = \frac{1-x^{n+1}}{}$
+
+\subsection{Suprémum et infimum}
 
 \end{document}
